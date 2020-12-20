@@ -1,8 +1,9 @@
 # Audio_Book
-## Pyttsx3
-## Pypdf2
+### Pyttsx3
+### PyPDF2
 
 Pyttsx3 is a Python library for dealing Text to speech convert.
+PyPDF2 is a Python library for dealing to extract text from PDF.
 
 ## Installation
 
@@ -10,7 +11,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install pyttsx3
 
 ```bash
 pip install pyttsx3
-pip install Pypdf2
+pip install PyPDF2
 or pip install -r requirements.txt
 ```
 

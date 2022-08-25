@@ -2,7 +2,7 @@
 import PyPDF2
 # how to convert text to speech
 import pyttsx3
-
+import datetime
 # Initialize the converter
 converter = pyttsx3.init()
 
@@ -17,7 +17,7 @@ voices = converter.getProperty('voices')
 converter.setProperty('voice', voices[1].id) #changing index changes voices but ony 0 and 1 are working here
 
 # Open the PDF file
-book = open("estimate of lig building.pdf", "rb")
+book = open("class.pdf", "rb")
 pdf_reader = PyPDF2.PdfFileReader(book)
 
 # if pdf contains more then one pages
@@ -31,6 +31,8 @@ for page_num in range(pages):
     text = page.extractText()  # extracting text from current page
     print(text)
     converter.say(text)  # now extract text will passed here to listen
+    curr_datetime = datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')
+    converter.save_to_file(text, f"{curr_datetime}.mp3")
     converter.runAndWait()
 
 # Empties the say() queue
